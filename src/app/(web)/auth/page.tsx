@@ -56,7 +56,7 @@ const Auth = () => {
     } finally {
       router.push("/api/auth/signin");
       // setFormData(defaultFormData); correct test
-    }
+    } 
   };
 
   return (
