@@ -36,7 +36,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow">
+    <header className=" top-0 z-50 shadow">
       <div className="container mx-auto flex items-center justify-between px-4 py-4">
         <Link href="/" className="hover:text-blue-600">
 
