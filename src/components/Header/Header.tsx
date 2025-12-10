@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { FaUserCircle } from "react-icons/fa";
 import { MdDarkMode, MdOutlineLightMode } from "react-icons/md";
 import { useSession } from "next-auth/react";
+import { assets } from "@/assets/assets";
 
 import ThemeContext from "@/context/themeContext";
 import Image from "next/image";
@@ -16,13 +17,35 @@ const Header = () => {
 
   return (
     <header className="py-10 px-4 container mx-auto text-xl flex flex-wrap md:flex-nowrap items-center justify-between">
-      <div className="flex items-center w-full md:2/3">
+      <div>
         <Link
           href="/"
-          className="font-medium md:font-semibold md:text-4xl text-xl  text-tertiary-dark"
         >
-          Shell Woodcreek Complex Hotel
+          {/* <Image
+          className="cursor-pointer w-28 md:w-32"
+          src={assets.logo}
+          alt="logo"
+        /> */}
+          <p className="font-medium md:font-semibold md:text-4xl text-xl  text-tertiary-dark">
+            Shell Woodcreek Complex Hotel
+          </p>
         </Link>
+      </div>
+      <div className="flex items-center gap-4 lg:gap-8  w-full md:w-1/3 mt-4">
+        <Link href="/" className="hover:text-gray-900 transition">
+          Home
+        </Link>
+        <Link href="/rooms" className="hover:text-gray-900 transition">
+          Rooms
+        </Link>
+        <Link href="/" className="hover:text-gray-900 transition">
+          About Us
+        </Link>
+        <Link href="https://www.shell.us/about-us/contact-shell.html" className="hover:text-gray-900 transition">
+          Contact
+        </Link>
+      </div>
+      <div>
         <ul className="flex items-center ml-5">
           <li className="flex items-center">
             {session?.user ? (
@@ -36,14 +59,21 @@ const Header = () => {
                       height={40}
                       className="scale-animation img"
                     />
+                    <p>Profile</p>
                   </div>
                 ) : (
-                  <FaUserCircle className="cursor-pointer" />
+                  <div className="flex items-center gap-2 hover:text-gray-900 transition">
+                    <FaUserCircle className="cursor-pointer" />
+                    <p>Profile</p>
+                  </div>
                 )}
               </Link>
             ) : (
               <Link href="/auth">
-                <FaUserCircle className="cursor-pointer" />
+                <div className="flex items-center gap-2 hover:text-gray-900 transition">
+                  <Image src={assets.user_icon} alt="user icon" />
+                  Account
+                </div>
               </Link>
             )}
           </li>
@@ -68,20 +98,6 @@ const Header = () => {
           </li>
         </ul>
       </div>
-
-      <ul className="flex items-center justify-between w-full md:w-1/3 mt-4">
-        <li className="hover:-translate-y-2 duration-500 transition-all">
-          <Link href="/">Home</Link>
-        </li>
-        <li className="hover:-translate-y-2 duration-500 transition-all">
-          <Link href="/rooms">Rooms</Link>
-        </li>
-        <li className="hover:-translate-y-2 duration-500 transition-all">
-          <Link href="https://www.shell.us/about-us/contact-shell.html">
-            Contact
-          </Link>
-        </li>
-      </ul>
     </header>
   );
 };
