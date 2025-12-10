@@ -46,19 +46,19 @@ const Header = () => {
             alt="logo"
           /> */}
 
-          <p className="font-medium md:font-semibold md:text-3xl text-xs  text-tertiary-dark">
+          <p className="font-medium md:font-semibold md:text-2xl text-xs  text-tertiary-dark">
             Shell Woodcreek Complex Hotel
           </p>
         </Link>
         <div className="hidden md:flex space-x-6">
-          <Link href="/" className="hover:text-blue-600">Home</Link>
-          <Link href="/rooms" className="hover:text-blue-600">
+          <Link href="/" className="hover:-translate-y-2 duration-500 transition-all">Home</Link>
+          <Link href="/rooms" className="hover:-translate-y-2 duration-500 transition-all">
             Rooms
           </Link>
-          <Link href="/" className="hover:text-blue-600">
+          <Link href="/" className="hover:-translate-y-2 duration-500 transition-all">
             About Us
           </Link>
-          <Link href="https://www.shell.us/about-us/contact-shell.html" className="hover:text-blue-600">
+          <Link href="https://www.shell.us/about-us/contact-shell.html" className="hover:-translate-y-2 duration-500 transition-all">
             Contact
           </Link>
         </div>
